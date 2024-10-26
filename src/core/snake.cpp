@@ -1,22 +1,3 @@
-/*
- *	Copyright (C) 2016 Sidhin S Thomas
- *
- *	This file is part of sfml-snake.
- *
- *    sfml-snake is free software: you can redistribute it and/or modify
- *   it under the terms of the GNU General Public License as published by
- *   the Free Software Foundation, either version 3 of the License, or
- *   (at your option) any later version.
- *
- *   sfml-snake is distributed in the hope that it will be useful,
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *   GNU General Public License for more details.
- *
- *   You should have received a copy of the GNU General Public License
- *   along with sfml-snake.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 #include "snake.h"
 #include "game.h"
 
@@ -88,8 +69,6 @@ void game::Snake::moveSnake(sf::Vector2<int> direction) {
 sf::Vector2f game::Snake::getNextFoodLocation() {
   bool okay = true;
   while (okay) {
-    /* This loop exists to make sure the new food does not spawn inside the
-     * snake */
     int x = rand.getRandomInt(0, screen->getSize().x - 4 * BOX_SIZE);
     int y = rand.getRandomInt(0, screen->getSize().y - 4 * BOX_SIZE);
     sf::Vector2f food_loc(x, y);
@@ -101,5 +80,5 @@ sf::Vector2f game::Snake::getNextFoodLocation() {
     }
     if (okay)
       return food_loc;
-  } // while(okay)
+  } 
 }
