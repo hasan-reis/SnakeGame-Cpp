@@ -1,4 +1,4 @@
-class MainMenu {
+class MainMenu { 
 public:
   Menu(sf::RenderWindow &w);
   void start();
